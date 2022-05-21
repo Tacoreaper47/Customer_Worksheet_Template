@@ -1,0 +1,23 @@
+
+
+## Code for customer worksheet template ##
+
+
+
+
+import xlsxwriter
+import os
+
+workbook = xlsxwriter.Workbook(r'C:\Users\ns034983\.spyder-py3\Excel Scripts\Insert_Image_Script_1.xlsx')
+worksheet = workbook.add_worksheet('Test Sheet for Images')
+
+worksheet.set_column('A:A', 75)
+worksheet.set_column('C:C', 75)
+
+worksheet.write('A1','An image should be in A3:')
+worksheet.insert_image('A3', 'SN1_Cut1_x350_A1_0001.jpg', {'x_offset':30, 'x_scale':1, 'y_scale':1})
+
+os.system('start EXCEL.EXE Insert_Image_Script_1.xlsx')
+
+workbook.close()
+
